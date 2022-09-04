@@ -1,0 +1,76 @@
+#include <stdio.h>
+// calculating chemical formula and their total mass
+int x =0;
+int C[3]= {6, 4, 12}; //atomic no, valence, mass
+int H[3]= {1,1,2};
+int O[3]= {8,2, 16};
+int N[3]= {7,3,14};
+int* pt1,* pt2;
+int* c,* d, sum,z;
+void swap(int* n1, int* n2);
+
+int main(){
+ while(z<4){
+ printf("Enter the operation\n 1.Carbon and Hydrogen, \n2. Carbon and Oxygen,\n3.Hydrogen and Oxygen,\n4.Nitrogen and Hydrogen\n");
+ scanf("%d", &x);
+
+ switch(x){
+  case 1:
+      printf("You chose C and H to combine\n");
+      pt1 = &C[1];
+      pt2 = &H[1];
+      swap(&pt1, &pt2);
+      printf("The formula for combining Carbon and Hydrogen is C%dH%d(methane)\n", *pt1, *pt2 );
+      c = &C[2];
+      d = &H[2];
+      sum = *c + *d;
+      printf("The mass of this compound is %d amu  \n\n\n", sum);
+      break;
+  case 2:
+      printf("You chose C and O to combine\n");
+      pt1 = &C[1];
+      pt2 = &O[1];
+      swap(&pt1, &pt2);
+      printf("The formula for combining Carbon and Oxygen is C%dO%d(Oxalate)\n", *pt1, *pt2 );
+      c = &C[2];
+      d = &O[2];
+      sum = *c + *d;
+      printf("The mass of this compound is %d amu  \n\n\n", sum);
+      break;
+  case 3:
+      printf("You chose H and O to combine\n");
+      pt1 = &H[1];
+      pt2 = &O[1];
+      swap(&pt1, &pt2);
+      printf("The formula for combining Hydrogen and Oxygen is H%dO%d(Water)\n", *pt1, *pt2 );
+      c = &H[2];
+      d = &O[2];
+      sum = *c + *d;
+      printf("The mass of this compound is %d amu  \n\n\n", sum);
+      break;
+  case 4:
+      printf("You chose N and H to combine\n");
+      pt1 = &N[1];
+      pt2 = &H[1];
+      swap(&pt1, &pt2);
+      printf("The formula for combining Nitrogen and Hydrogen is N%dH%d(Ammonia)\n", *pt1, *pt2 );
+      c = &N[2];
+      d = &H[2];
+      sum = *c + *d;
+      printf("The mass of this compound is %d amu  \n\n\n", sum);
+       break;
+  default:
+      printf("restart agian");
+      break;
+ }
+ z++;
+ }
+ return 0;
+}
+void swap(int* n1, int* n2){
+  int temp;
+  temp = *n1;
+  *n1 = *n2;
+  *n2 = temp;
+}
+
