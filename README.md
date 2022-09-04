@@ -1,0 +1,2 @@
+# Nccthirdassign
+for using pointer
